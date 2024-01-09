@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Risque&family=Roboto+Condensed:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Risque&family=Roboto+Mono:wght@300&display=swap');
 
 :root{
     --h1-font: 32px;
     --h2-font: 24px;
     --h3-font: 16px;
-    --para-font: 16px;
+    --para-font: 14px;
+    --padding-main_container: 50px 100px;
+    --padding-small_container: 20px;
 }
 
 *, ::before,::after{
@@ -14,8 +16,6 @@
     width: 100%;
 }
 
-
-
 a{
     text-decoration: none;
     color: white;
@@ -24,24 +24,27 @@ a{
 h1{
     font-size: var(--h1-font);
     line-height: 110%;
+    font-weight: 800;
     letter-spacing: -10%;
 }
 
 h2{
     font-size: var(--h2-font);
     line-height: 120%;
+    font-weight: 700;
     letter-spacing: -5%;
 }
 
 h3{
     font-size: var(--h3-font);
+    font-weight: 600;
     line-height: 130%;
     letter-spacing: -0.5%;
 }
 
 p{
     font-size: var(--para-font);
-    font-weight: 600;
+    font-weight: bold;
     line-height: 130%;
 }
 
@@ -49,7 +52,7 @@ body{
     width: 100%;
     background: #00002e;
     color: white;
-    font-family: 'Roboto condensed', sans-serif;
+    font-family: 'Roboto Mono', sans-serif;
     font-size: 16px;
 }
 
@@ -85,7 +88,6 @@ nav .logo h2 > span{
 
 .nav-items{
     padding: 10px;
-
     display: flex;
     gap: 20px;
     align-items: center;
@@ -116,3 +118,187 @@ nav .logo h2 > span{
     color: #000;
     padding: 50px;
 }
+
+#catalogue{
+    width: 100%;
+    background-color: #00002e;
+    padding: 50px 100px; 
+}
+
+.catalogue-container{
+    height: 20vh;
+    min-width: 480px;
+    margin: 0 auto;
+}
+
+.catalogue-container h2{
+    margin-bottom: 20px;
+}
+
+.catalogue-container .catalogue-list{
+    list-style-type: none;
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+
+.catalogue-container .catalogue-list .list-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.catalogue-container .catalogue-list .list-item a{
+    font-size: 14px;
+}
+
+.catalogue-container .catalogue-list .list-item span{
+    color: black;
+  
+}
+
+section .products{
+    margin: 0 auto;
+    width: 75%;
+    height: fit-content;
+    background-color: #5b7c99;
+    color: black;
+}
+
+section .gaming-pcs{
+    margin: 0 auto;
+    padding: var(--padding-main_container);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .img-container{
+    width: 300px;
+    height: 150px;
+    box-shadow: 0px 0px 60px 5px #00172e;
+}
+
+section .img-container img{
+    object-fit: cover;
+    object-position: center;
+}
+
+section .text-container{
+    width: 350px;
+    height: fit-content;
+    padding: var(--padding-small_container);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section .text-container > *{
+    margin-bottom: 3px;
+}
+
+section .text-container .action-button{
+    appearance: none;
+    background-color: inherit;
+    border: 2px solid #37013A;
+    border-radius: 15px;
+    color: #37013A;
+    cursor: pointer;
+    margin: 8px auto;
+    width: 150px;
+    height: 50px;
+    outline: none;
+    padding: 16px 24px;
+    font-weight: 700;
+    text-shadow: 0 0 25px rgba(55 ,1, 58, 0.25);
+    text-align: center;
+    text-decoration: none;
+}
+
+section .text-container .action-button:hover {
+    box-shadow: 0px 0px 50px 5px #37013A;
+    transform: translateY(-2px);
+}
+
+section .text-container .action-button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+
+section .accessories{
+    margin: 0 auto;
+    padding: var(--padding-main_container);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .services{
+    width: 75%;
+    height: fit-content;
+    margin: 0 auto;
+    background-color: #d9d9d9;
+    color: black;
+}
+
+section .services .repairs h1{
+    text-align: center;
+    padding-top: 50px;
+}
+
+section .services .repairs .container{
+    padding: var(--padding-main_container);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .calculate .img-container{
+    width: 100%;
+    height: 300px;
+    box-shadow: none;
+}
+
+section .calculate .repairs .img-container img{
+    object-fit: cover;
+}
+
+section .calculate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section .calculate .text-container{
+    width: 100%;
+    padding: var(--padding-main_container);
+    background-color: #2E2E00;
+    color: white;
+    text-align: center;
+}
+
+section .calculate .text-container > *{
+    margin: 20px auto;
+    max-width: 480px;
+}
+
+section .membership{
+    border: 10px solid black;
+    background: url("images/member.jpg"), lightgray 50%;
+    background-position: center;
+    background-size: cover;
+    color: black;
+    width: 75%;
+    height: 500px;
+    margin: 0px auto;
+}
+
+section .membership .text-container{
+    margin: 0 auto;
+    padding: 40px;
+}
+
