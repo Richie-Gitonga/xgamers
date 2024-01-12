@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Risque&family=Roboto+Mono:wght@300&display=swap');
 
 :root{
-    --h1-font: 32px;
-    --h2-font: 24px;
-    --h3-font: 16px;
-    --para-font: 14px;
+    --h1-font: 2rem;
+    --h2-font: 1.5rem;
+    --h3-font: 1rem;
+    --para-font: 0.75rem;
     --padding-main_container: 50px 100px;
     --padding-small_container: 20px;
 }
@@ -48,55 +48,78 @@ p{
     line-height: 130%;
 }
 
+ul{
+    list-style-type: none;
+}
+
 body{
-    width: 100%;
+    width: 100vw;
     background: #00002e;
     color: white;
     font-family: 'Roboto Mono', sans-serif;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 nav{
-    width: 100%;
-    height: 10vh;
-    padding: 0 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    width: 100vw;
+    min-height: 80px;
+    background-color: #1d1d46;
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #1d1d46;
     box-shadow: 0px 10px 30px 5px rgba(0,0,0,0.59);
--webkit-box-shadow: 0px 10px 30px 5px rgba(0,0,0,0.59);
--moz-box-shadow: 0px 10px 30px 5px rgba(0,0,0,0.59);
 }
 
 nav .logo{
+    width: 100%;
+    padding: 1rem 3rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+}
+
+nav .logo span{
+    width: fit-content;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.5s ease right;
+}
+
+nav .logo .logo-container{
+    width: 1.75rem;
+    height: 1.75rem;
 }
 
 nav .logo h2{
-    display: flex;
-    align-items: center;
+    display: none;
 }
-nav .logo h2 > span{
+
+nav .nav-items{
+    width: 100vw;
+    display: none;
+    flex-direction: column;
+    transition: all 1s ease down;
+}
+
+nav .nav-items a{
+    margin: 1rem auto;
     width: fit-content;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.5s ease down;
 }
 
-.nav-items{
-    padding: 10px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-
-}
-
-.nav-items a:hover{
+nav .nav-items a:hover{
     color: slateblue;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease down;
+}
+
+nav .nav-items .active{
+    background-color: #88C5E8;
+    color: slateblue;
+    transition: all 0.5 ease down;
 }
 
 #hero-section{
@@ -105,17 +128,16 @@ nav .logo h2 > span{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .hero-text_container{
-    width: 32rem;
-    height: 15rem;
-    background-color:rgba(167,167, 176, 0.75);
-    color: #000;
+    max-width: 520px;
+    max-height: 400px;
+    background-color:rgba(167,167, 176, 0.4);
+    color: rgba(0,0,0,0.8);
     padding: 50px;
 }
 
@@ -125,40 +147,6 @@ nav .logo h2 > span{
     padding: 50px 100px; 
 }
 
-.catalogue-container{
-    height: 20vh;
-    min-width: 480px;
-    margin: 0 auto;
-}
-
-.catalogue-container h2{
-    margin-bottom: 20px;
-}
-
-.catalogue-container .catalogue-list{
-    list-style-type: none;
-    display: flex;
-    align-items: start;
-    justify-content: space-evenly;
-    gap: 30px;
-}
-
-.catalogue-container .catalogue-list .list-item{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-}
-
-.catalogue-container .catalogue-list .list-item a{
-    font-size: 14px;
-}
-
-.catalogue-container .catalogue-list .list-item span{
-    color: black;
-  
-}
 
 section .products{
     margin: 0 auto;
@@ -170,16 +158,18 @@ section .products{
 
 section .gaming-pcs{
     margin: 0 auto;
-    padding: var(--padding-main_container);
+    padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
 }
 
 section .img-container{
-    width: 300px;
-    height: 150px;
-    box-shadow: 0px 0px 60px 5px #00172e;
+    max-width: 80%;
+    min-height: 150px;
+    margin: 0 auto;
+    flex: 0 1 auto;
 }
 
 section .img-container img{
@@ -188,12 +178,14 @@ section .img-container img{
 }
 
 section .text-container{
-    width: 350px;
+    width: 100%;
     height: fit-content;
     padding: var(--padding-small_container);
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    flex: 1 1 auto;
 }
 
 section .text-container > *{
@@ -208,10 +200,10 @@ section .text-container .action-button{
     color: #37013A;
     cursor: pointer;
     margin: 8px auto;
-    width: 150px;
-    height: 50px;
+    max-width: 150px;
+    max-height: 50px;
     outline: none;
-    padding: 16px 24px;
+    padding: 0.5rem;
     font-weight: 700;
     text-shadow: 0 0 25px rgba(55 ,1, 58, 0.25);
     text-align: center;
@@ -231,10 +223,11 @@ section .text-container .action-button:active {
 
 section .accessories{
     margin: 0 auto;
-    padding: var(--padding-main_container);
+    padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
 }
 
 section .services{
@@ -251,10 +244,7 @@ section .services .repairs h1{
 }
 
 section .services .repairs .container{
-    padding: var(--padding-main_container);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: var(--padding-small_container);
 }
 
 section .calculate .img-container{
@@ -275,7 +265,7 @@ section .calculate{
 
 section .calculate .text-container{
     width: 100%;
-    padding: var(--padding-main_container);
+    padding: var(--padding-small_container);
     background-color: #2E2E00;
     color: white;
     text-align: center;
@@ -283,22 +273,83 @@ section .calculate .text-container{
 
 section .calculate .text-container > *{
     margin: 20px auto;
-    max-width: 480px;
 }
 
 section .membership{
-    border: 10px solid black;
-    background: url("images/member.jpg"), lightgray 50%;
+    background-image: url("images/member.jpg");
     background-position: center;
     background-size: cover;
     color: black;
     width: 75%;
-    height: 500px;
+    min-height: 300px;
     margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 section .membership .text-container{
     margin: 0 auto;
     padding: 40px;
+}
+
+footer{
+    width: 100%;
+    background-color: #222021;
+    padding: 50px;
+}
+
+footer p{
+    font-size: 12px ;
+    font-weight: 400;
+    margin-left: 3px;
+}
+
+footer .container> *{
+    width: 100%; 
+    margin-bottom: 12px;
+    padding: 5px;
+}
+
+footer .company-info > *{
+    margin: 4px;
+}
+
+footer .sitemap > * {
+    margin-bottom: 4px;
+}
+
+footer .sitemap ul{
+    list-style-type: disc;
+    margin-left: 1.5rem;
+}
+
+footer .social .support > *{
+    margin: 3px;
+}
+
+footer .social .platforms .icons{
+    width: 20px;
+    height: 20px;
+    margin: 0 auto; 
+}
+
+footer .social .platforms ul{
+    display: flex;
+    margin: 0 auto;
+
+}
+
+footer .social .platforms ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 5px;
+}
+
+footer .copyright{
+    max-width: 25rem;
+    margin: 0 auto;
+    text-align: center;
 }
 
