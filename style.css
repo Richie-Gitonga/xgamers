@@ -5,8 +5,8 @@
     --h2-font: 1.5rem;
     --h3-font: 1rem;
     --para-font: 0.75rem;
-    --padding-main_container: 50px 100px;
-    --padding-small_container: 20px;
+    --padding-main_container: 2rem 0;
+    --padding-small_container: 2rem;
 }
 
 *, ::before,::after{
@@ -60,12 +60,38 @@ body{
     font-size: 12px;
 }
 
+.layout-container{
+    margin: 0 auto;
+    padding: var(--padding-main_container);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-container{
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.text-container h2, p{
+    margin-bottom: 1rem;
+}
+
+.img-container{
+    max-width: 50%;
+    max-height: 75%;
+    min-width: 50%;
+    min-height: 50%;
+    margin: auto;
+}
+.content-image{
+    box-shadow: 0px 10px 30px 5px rgba(0,0,0,0.59);
+}
+
 nav{
-    width: 100vw;
-    min-height: 80px;
     background-color: #1d1d46;
     display: block;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     box-shadow: 0px 10px 30px 5px rgba(0,0,0,0.59);
@@ -73,7 +99,7 @@ nav{
 
 nav .logo{
     width: 100%;
-    padding: 1rem 3rem;
+    padding: 1rem 0.25rem;
     display: flex;
     align-items: center;
 }
@@ -123,174 +149,49 @@ nav .nav-items .active{
 }
 
 #hero-section{
-    height: 90vh;
+    margin-top: 10vh;
     background-image: url('images/pcs.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.hero-text_container{
-    max-width: 520px;
-    max-height: 400px;
+.bubble{
     background-color:rgba(167,167, 176, 0.4);
-    color: rgba(0,0,0,0.8);
-    padding: 50px;
+    padding: 1rem;
 }
 
-#catalogue{
-    width: 100%;
-    background-color: #00002e;
-    padding: 50px 100px; 
-}
-
-
-section .products{
-    margin: 0 auto;
-    width: 75%;
-    height: fit-content;
+.products{
     background-color: #5b7c99;
     color: black;
 }
 
-section .gaming-pcs{
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 50px;
-}
-
-section .img-container{
-    max-width: 80%;
-    min-height: 150px;
-    margin: 0 auto;
-    flex: 0 1 auto;
-}
-
-section .img-container img{
-    object-fit: cover;
-    object-position: center;
-}
-
-section .text-container{
-    width: 100%;
-    height: fit-content;
-    padding: var(--padding-small_container);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    flex: 1 1 auto;
-}
-
-section .text-container > *{
-    margin-bottom: 3px;
-}
-
 section .text-container .action-button{
-    appearance: none;
-    background-color: inherit;
     border: 2px solid #37013A;
     border-radius: 15px;
     color: #37013A;
     cursor: pointer;
-    margin: 8px auto;
     max-width: 150px;
-    max-height: 50px;
     outline: none;
     padding: 0.5rem;
     font-weight: 700;
-    text-shadow: 0 0 25px rgba(55 ,1, 58, 0.25);
     text-align: center;
-    text-decoration: none;
 }
 
-section .text-container .action-button:hover {
-    box-shadow: 0px 0px 50px 5px #37013A;
-    transform: translateY(-2px);
-}
-
-section .text-container .action-button:active {
-    box-shadow: none;
-    transform: translateY(0);
-}
-
-
-section .accessories{
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-
-section .services{
-    width: 75%;
-    height: fit-content;
+.services{
     margin: 0 auto;
     background-color: #d9d9d9;
     color: black;
 }
 
-section .services .repairs h1{
-    text-align: center;
-    padding-top: 50px;
-}
 
-section .services .repairs .container{
-    padding: var(--padding-small_container);
-}
 
-section .calculate .img-container{
-    width: 100%;
-    height: 300px;
-    box-shadow: none;
-}
-
-section .calculate .repairs .img-container img{
-    object-fit: cover;
-}
-
-section .calculate{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-section .calculate .text-container{
-    width: 100%;
-    padding: var(--padding-small_container);
-    background-color: #2E2E00;
-    color: white;
-    text-align: center;
-}
-
-section .calculate .text-container > *{
-    margin: 20px auto;
-}
-
-section .membership{
+.membership{
     background-image: url("images/member.jpg");
     background-position: center;
     background-size: cover;
     color: black;
-    width: 75%;
-    min-height: 300px;
     margin: 0px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-section .membership .text-container{
-    margin: 0 auto;
-    padding: 40px;
 }
 
 footer{
